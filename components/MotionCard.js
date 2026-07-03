@@ -1,0 +1,21 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+export default function MotionCard({ children, index }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        type: 'spring',
+        bounce: 0.4
+      }}
+      className="h-full"
+    >
+      {children}
+    </motion.div>
+  );
+}
